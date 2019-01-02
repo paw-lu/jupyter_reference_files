@@ -1,0 +1,683 @@
+/*This file contains any manual css for this page that needs to override the global styles.
+This is only required when different pages style the same element differently. This is just
+a hack to deal with our current css styles and no new styling should be added in this file.*/
+
+#ipython-main-app {
+    position: relative;
+}
+#jupyter-main-app {
+    position: relative;
+}
+
+/* div#header-container {
+  display: none !important;
+} */
+
+
+/* GLOBALS */
+
+a {
+  color: #0000ee;
+}
+
+
+body,
+.CodeMirror {
+  font-family: Roboto, sans-serif;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #212121;
+}
+
+body.notebook_app {
+  background-color: #E9E9E9;
+}
+
+div.code_cell .CodeMirror,
+.cm-s-default .cm-comment,
+.prompt,
+code,
+kbd,
+samp {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.3rem;
+  line-height: 1.4rem;
+}
+
+pre {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.3rem;
+  line-height: 1.24;
+  color: rgb(33,33,33);
+}
+
+div.output_area pre {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.3rem;
+  line-height: 1.24;
+  color: #212121;
+}
+
+
+/* INTRO PAGE */
+
+div.list_container {
+  /* border-radius: 0; */
+}
+div.list_container > div {
+  border-bottom: none;
+}
+
+span.item_name {
+  color: #212121
+}
+
+.nav > li > a {
+    color: #212121 !important;
+}
+
+#notebook_list.list_container {
+  border: none;
+}
+
+.fa.fa-folder {
+  color: #333;
+}
+
+.breadcrumb > li > a {
+  color: #333;
+}
+
+.btn-default.btn-upload {
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pull-right > #new-buttons.btn-group > .btn-xs {
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pull-right > #new-buttons.btn-group > .btn-xs {
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pull-right > .btn-group > .btn-xs {
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.panel {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.panel-heading > a {
+  color: #212121;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #F7CF5C;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.running_notebook_icon:before {
+    color: #F3BD46;
+}
+
+.sort_button > .btn-default.btn-xs {
+  background-color: transparent;
+}
+
+.item_buttons .running-indicator {
+  padding-top: 0px;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #479B5F;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#tree-selector.btn-group.dropdown > .btn-xs {
+  background-color: transparent;
+}
+/* Pop ups */
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.btn.btn-default.btn-sm {
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+
+/* NOTEBOOK */
+
+.navbar-brand {
+  display: none !important;
+}
+
+span#kernel_logo_widget {
+  display: none !important;
+}
+
+div#notebook-container.container {
+
+  min-width: 600px;
+  width: 96.3%;
+  margin-left: 36px;
+  margin-right: 16px;
+  margin-bottom: 5px;
+  padding-left: 18px;
+  padding-right: 14px;
+
+}
+
+
+.navbar-default .navbar-nav > li > a {
+    color: rgba(0,0,0,0.87);
+}
+
+div.navbar-default {
+  border: none;
+  background-color: #ffffff;
+}
+
+#maintoolbar {
+    margin-bottom: -3px;
+    margin-top: -8px;
+    border: 0px;
+    min-height: 27px;
+    margin-left: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+span#save_widget {
+  margin-left: 47px;
+}
+
+#logout {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#shutdown {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+div.navbar-collapse.collapse {
+  margin-left: 35px;
+}
+
+#menubar-container {
+  padding-bottom: 3px;
+}
+
+
+span.filename {
+  font-size: 18px;
+  color: #222222;
+}
+
+span.autosave_status {
+  color: #777777;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+span.checkpoint_status {
+  color: #777777;
+  font-size: 14px;
+  margin-left: 100px;
+}
+
+body > #header {
+  background-color: #ffffff;
+}
+
+#maintoolbar {
+  background-color: #f7f7f7;
+}
+
+body > #header .header-bar {
+  display: none;
+}
+div#notebook {
+  border-top: none;
+}
+
+.notebook_app > #header {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 4px -2px;
+}
+
+.btn {
+  border: 0px;
+  padding: 0px 0px;
+}
+
+.btn-default {
+  color: #5A5A5A;
+  background-color: #f7f7f7;
+}
+
+.btn-default:focus,
+.btn-default.focus {
+  color: #5A5A5A;
+  background-color: #f7f7f7;
+}
+
+
+.btn-default:hover {
+  color: #5A5A5A;
+  background-color: #fbfbfb;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #5A5A5A;
+  background-color: #c9c9c9;
+  border-color: #c9c9c9;
+}
+
+.btn.active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+  color: #5A5A5A;
+  background-color: #c9c9c9;
+}
+
+.dropdown-menu > li > a {
+  color: #212121;
+}
+
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #212121;
+  background-color: #eeeeee;
+}
+
+
+/* input cell */
+
+div.input {
+  border: none;
+  width: 100%;
+}
+
+div.cell.code_cell > div.input > div.inner_cell {
+  background-color: #f7f7f7;
+}
+
+div.input_prompt {
+  color: #212121;
+  border: none;
+}
+
+div.output_prompt {
+  color: #212121;
+}
+
+div.cell.code_cell.unselected > div.input > div.prompt.input_prompt {
+  background-color: #F7F7F7;
+}
+
+div.input_area {
+  /* border-radius: 0; */
+  border: none;
+  background-color: #F7F7F7;
+  box-shadow: none;
+}
+
+div.CodeMirror.cm-s-default.CodeMirror-wrap {
+  background-color: #ffffff;
+  color: rgb(66,66,66);
+}
+
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ffffff;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+}
+
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  content: '';
+  background: #ffffff;
+}
+
+.edit_mode div.cell.selected {
+  border-color: #ffffff;
+}
+
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: 0px
+  left: 0px;
+  width: 0px;
+  height: 0px;
+  content: '';
+  background: #212121;
+}
+
+/* div.cell.selected > div.input > div.prompt.input_prompt {
+  background-color: #DDDDDD;
+  border: none;
+}  */
+
+div.cell.selected > div.input > div.prompt.input_prompt {
+  background-color: #f7f7f7;
+  border: none;
+}
+
+.edit_mode div.cell.selected > div.input > div.prompt.input_prompt {
+  background-color: #DDDDDD;
+  border: none;
+}
+
+div.run_this_cell {
+  color: #424242;
+  background-color: #f7f7f7;
+}
+
+div.cell.selected > div.input > div.run_this_cell {
+  background-color: #f7f7f7;
+  visibility: visible;
+}
+
+.edit_mode div.cell.selected > div.input > div.run_this_cell {
+  background-color: #DDDDDD;
+  visibility: visible;
+}
+
+
+div.text_cell.selected > div.prompt.input_prompt {
+  background-color: #f7f7f7;
+  border: none;
+}
+
+.edit_mode div.text_cell.selected > div.prompt.input_prompt {
+  background-color: #DDDDDD;
+  border: none;
+}
+
+
+div.cell {
+  padding: 0px;
+  border-width: 0px;
+  margin-bottom: 10px;
+}
+
+div.output.output_scroll {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+/* rendered html cell (mostly) */
+
+.rendered_html h1,
+.rendered_html h2,
+.rendered_html h3,
+.rendered_html h4,
+.rendered_html h5,
+.rendered_html h6,
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-family: inherit;
+  line-height: inherit;
+  font-weight: 700;
+  color: #212121;
+}
+.rendered_html h1:first-child,
+.rendered_html h1,
+.rendered_html h2,
+.rendered_html h3,
+.rendered_html h4,
+.rendered_html h5,
+.rendered_html h6 {
+  margin-top: .5em;
+}
+.rendered_html h1,
+.cm-header-1 {
+  font-size: 2.8rem;
+  line-height: 4.3rem;
+}
+.rendered_html h2,
+.cm-header-2 {
+  font-size: 2.1rem;
+  line-height: 3.2rem;
+}
+.rendered_html h3,
+.cm-header-3 {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+.rendered_html h4,
+.cm-header-4 {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+.rendered_html h5,
+.cm-header-5 {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+.rendered_html h6,
+.cm-header-6 {
+  font-size: 0.9rem;
+  line-height: 1.4rem
+}
+.rendered_html table,
+.rendered_html th,
+.rendered_html tr,
+.rendered_html td {
+  font-size: 14px;
+  color: #212121;
+}
+
+.rendered_html thead {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+/* style python code syntax */
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #000000 !important;
+  /* text-decoration:underline; */
+}
+
+span.CodeMirror-nonmatchingbracket{
+  color:#a22
+}
+
+.cm-s-ipython .CodeMirror-gutters {
+  border-right:1px solid #ddd;
+  background-color:#f7f7f7;
+  white-space:nowrap;
+}
+.cm-s-ipython .CodeMirror-linenumber {
+  padding:0 3px 0 5px;
+  min-width:20px;
+  text-align:right;
+  color:#999;
+  white-space:nowrap;
+}
+.cm-s-ipython span.cm-number {
+  color:#164;
+}
+.cm-s-ipython span.cm-property {}
+
+.cm-s-ipython span.cm-attribute {
+  color:#00c;
+}
+.cm-s-ipython span.cm-keyword {
+  color:#708;
+  font-weight: normal;
+}
+.cm-s-ipython span.cm-string {
+  color:#a11;
+}
+
+
+.cm-string-2{
+  color:#f50
+}
+
+
+.cm-s-ipython span.cm-operator {
+  color: #212121;
+  font-weight: normal;
+}
+
+.cm-s-ipython span.cm-builtin {
+  color:#30a;
+}
+.cm-s-ipython span.cm-variable {
+}
+
+.cm-s-ipython span.cm-variable-2 {
+  color:#05a;
+}
+.cm-s-ipython span.cm-def {
+  color:#00f;
+}
+.cm-s-ipython span.cm-error {
+  /* background: #e00; */
+  color: #f00;
+  /* !important */
+}
+.cm-s-ipython span.cm-bracket {
+  color:#997;
+}
+.cm-s-ipython span.cm-comment {
+  color:#a50;
+  font-style: normal;
+}
+.cm-s-ipython span.cm-tag {
+  color:#170;
+}
+.cm-s-ipython span.cm-atom {
+  color:#219;
+}
+
+/* markdown style */
+
+.cm-s-default .cm-tag {
+  color:#170;
+}
+.cm-s-default .cm-comment {
+  color:#a50;
+}
+.cm-s-default .cm-string {
+  color:#00c;
+}
+.cm-s-default .cm-link {
+  color:#00c;
+}
+.cm-s-default .cm-header {
+  color: #212121;
+  font-weight:bold;
+}
+.cm-s-default .cm-quote {
+  color: #183691;
+}
+
+.cm-s-default .cm-variable-2 {
+    color: rgb(66,66,66);
+}
+
+/* error in output */
+
+.ansi-red-fg {
+  color: rgb(139,0,0);
+}
+
+.ansi-red-bg {
+  background-color: rgb(139,0,0);
+}
+
+.ansi-green-fg {
+  color: rgb(0,100,0);
+}
+
+.ansi-green-bg {
+  background-color: rgb(0,100,0);
+}
+
+.ansi-cyan-fg {
+  color: rgb(70,130,180)
+}
+.ansi-cyan-bg {
+  background-color: rgb(70,130,180);
+}
+
+.ansi-blue-fg {
+  color: rgb(0,0,238);
+}
+.ansi-blue-bg {
+  background-color: rgb(0,0,238);
+}
+
+.ansi-black-fg {
+  color: #212121;
+}
+.ansi-black-bg {
+  background-color: #212121;
+}
+
+/* Scratchpad */
+#nbextension-scratchpad {
+    background-color: #ffffff !important;
+    border-left: none !important;
+    border-top: none !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 13px 5px;
+}
