@@ -1,0 +1,71 @@
+
+# font.family : Roboto Medium
+font.weight : 400
+text.color : 757575
+
+axes.facecolor: FFFFFF
+axes.edgecolor: FFFFFF
+patch.edgecolor: FFFFFF
+figure.facecolor: FFFFFF
+savefig.facecolor: FFFFFF
+savefig.edgecolor: FFFFFF
+
+
+axes.labelsize : 12
+axes.labelpad  : 25
+axes.labelweight : 400
+axes.labelcolor: 757575
+
+xtick.color : 757575
+ytick.color: 757575
+xtick.labelsize : 12
+ytick.labelsize: 12
+xtick.major.pad : 2.5
+ytick.major.pad : 2.5
+
+xtick.bottom : False
+ytick.left : False
+
+axes.spines.left   : False
+axes.spines.bottom : False
+axes.spines.top    : False
+axes.spines.right  : False
+
+axes.grid : True
+axes.grid.axis : y
+axes.axisbelow: True
+grid.color : E0E0E0
+
+axes.titleweight : 400
+figure.titlesize: 17
+axes.titlesize : 17
+axes.titlepad: 25
+
+figure.figsize : 9, 5
+# figure.dpi : 220
+
+lines.linewidth : 1.5
+
+legend.loc : upper right
+legend.frameon : False
+legend.framealpha : 1
+legend.edgecolor : 1
+legend.fontsize : 15
+
+lines.dash_joinstyle : round
+lines.solid_joinstyle : round
+lines.solid_capstyle: round
+
+axes.prop_cycle : cycler('color', ['4285F4', 'DB4437', 'F4B400', '0F9D58', 'AB47BC', '4DAABE', 'EE7950', '9E9D3D', '5F6BBA', 'DF6B92', '33776B', 'B22E5B'])
+                    # 4285F4 : blue
+                    # DB4437 : red
+                    # F4B400 : yellow
+                    # 0F9D58 : green
+                    # AB47BC : purple
+                    # 4DAABE : cyan
+                    # EE7950 : orange
+                    # 9E9D3D : lime
+                    # 5F6BBA : indigo
+                    # DF6B92 : pink
+                    # 33776B : teal
+                    # B22E5B : dark pink

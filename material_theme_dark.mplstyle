@@ -1,0 +1,68 @@
+
+font.family : Google Sans
+font.weight : 400
+text.color : FFFFFF
+
+axes.facecolor: 202124
+axes.edgecolor: 202124
+patch.edgecolor: 202124
+figure.facecolor: 202124
+savefig.facecolor: 202124
+savefig.edgecolor: 202124
+
+axes.labelsize : 12
+axes.labelpad  : 25
+axes.labelweight : 400
+axes.labelcolor: FFFFFF
+
+xtick.color : FFFFFF
+ytick.color: FFFFFF
+xtick.labelsize : 12
+ytick.labelsize: 12
+xtick.major.pad : 2.5
+ytick.major.pad : 2.5
+
+xtick.bottom : False
+ytick.left : False
+
+axes.spines.left   : False
+axes.spines.bottom : False
+axes.spines.top    : False
+axes.spines.right  : False
+
+axes.grid : True
+axes.grid.axis : y
+axes.axisbelow: True
+grid.color : 5C5C5C
+
+axes.titleweight : 400
+figure.titlesize: 17
+axes.titlesize : 17
+axes.titlepad: 25
+
+figure.figsize : 9, 5
+figure.dpi : 220
+
+lines.linewidth : 1.5
+
+legend.loc : upper right
+legend.frameon : False
+legend.framealpha : 1
+legend.edgecolor : 1
+legend.fontsize : 15
+
+lines.dash_joinstyle : round
+lines.solid_joinstyle : round
+lines.solid_capstyle: round
+
+axes.prop_cycle : cycler('color', ['6BA5ED', 'EE675C', 'FCC934', '5BB974', 'AF5CF7', '4ECDE6', 'FA903E', 'FF63B8'])
+                    # 6BA5ED : blue
+                    # EE675C : red
+                    # FCC934 : yellow
+                    # 5BB974 : green
+                    # AF5CF7 : purple
+                    # 4ECDE6 : cyan
+                    # FA903E : orange
+                    # FF63B8 : pink
+                    
+
