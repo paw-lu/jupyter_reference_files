@@ -1,4 +1,4 @@
-# Use with %load C:\Users\pcosta\DSwork\jupyter_referece_files\imports.py
+# Use with %load C:\Users\pcosta\DSwork\jupyter_reference_files\SQL.py
 %matplotlib inline
 
 import pandas as pd

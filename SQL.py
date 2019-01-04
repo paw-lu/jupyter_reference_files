@@ -1,4 +1,4 @@
-# Load with %load C:\Users\pcosta\DSwork\jupyter_referece_files\SQL.py
+# Load with %load C:\Users\pcosta\DSwork\jupyter_reference_files\SQL.py
 import pandas as pd
 import os
 import pyodbc
