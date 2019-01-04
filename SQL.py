@@ -1,4 +1,4 @@
-# Load with %load SQL.py
+# Load with %load C:\Users\pcosta\DSwork\jupyter_referece_files\SQL.py
 import pandas as pd
 import os
 import pyodbc
@@ -163,3 +163,18 @@ class TempTable:
 
     def close(self):
         self.conn.close()
+
+# Turn python list into SQL list in string form
+def to_SQL_list(python_list, force_string=False):
+    if isinstance(python_list[0], str) or force_string:
+        quote = "'"
+    else:
+        quote = ""
+
+    sql_list = "("
+    for item in python_list:
+        sql_list += f"{quote}{item}{quote},"
+    sql_list = sql_list.strip(",")
+    sql_list += ")"
+
+    return sql_list
