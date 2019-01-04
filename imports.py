@@ -1,4 +1,5 @@
 # Use with %load imports.py
+%matplotlib inline
 
 import pandas as pd
 import numpy as np
@@ -6,7 +7,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from IPython.core.interactiveshell import InteractiveShell
 
-%matplotlib inline
 %config InlineBackend.figure_format = "retina" # Higher resolution plots
 
 InteractiveShell.ast_node_interactivity = "all" # Muliple outputs
