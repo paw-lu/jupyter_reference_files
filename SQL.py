@@ -34,7 +34,6 @@ def get_server_name(alias):
         return alias
 
 # Run commands, like dropping temp tables
-# run_command("IF OBJECT_ID('tempdb..##temp_table','U') IS NOT NULL DROP TABLE ##temp_table;")
 def run_command(c, database='QuantDB', server='DC1Q2PSQLFE1V'):
     database = get_db_name(database)
     server = get_server_name(server)
@@ -151,6 +150,9 @@ class TempTable:
     def __init__(self, c, database='QuantDB', server='DC1Q2PSQLFE1V'):
         database = get_db_name(database)
         server = get_server_name(server)
+
+        temp_table_name = re.findall(r"INTO\s##\w+", c)[0].split(' ')[1]
+        run_command(f"IF OBJECT_ID('tempdb..{temp_table_name}','U') IS NOT NULL DROP TABLE {temp_table_name};")
         self.conn = pyodbc.connect(
                                     "Driver={SQL Server};"
                                     f"Server={server};"
