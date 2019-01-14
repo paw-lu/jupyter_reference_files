@@ -2,6 +2,7 @@
 import pandas as pd
 import os
 import pyodbc
+import re
 
 pyodbc.lowercase = True
 pd.set_option('max_columns', 180)
