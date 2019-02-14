@@ -4,6 +4,11 @@ import os
 import pyodbc
 import re
 
+default_server = 'DC1Q2PSQLFE1V'
+default_db = 'QuantDB'
+default_schema = 'prod'
+
+
 pyodbc.lowercase = True
 pd.set_option('max_columns', 180)
 pd.set_option('max_rows', 500)
@@ -35,7 +40,7 @@ def get_server_name(alias):
         return alias
 
 # Run commands, like dropping temp tables
-def run_command(c, database='QuantDB', server='DC1Q2PSQLFE1V'):
+def run_command(c, database=default_db, server=default_server):
     database = get_db_name(database)
     server = get_server_name(server)
 
@@ -49,7 +54,7 @@ def run_command(c, database='QuantDB', server='DC1Q2PSQLFE1V'):
         crsr.execute(c)
 
 # Run query through Pandas
-def run_query(q, database='QuantDB', server='DC1Q2PSQLFE1V'):
+def run_query(q, database=default_db, server=default_server):
     database = get_db_name(database)
     server = get_server_name(server)
 
@@ -62,7 +67,7 @@ def run_query(q, database='QuantDB', server='DC1Q2PSQLFE1V'):
         return pd.read_sql(q, conn)
 
 # Show all tables in database
-def show_tables(database='QuantDB', server='DC1Q2PSQLFE1V'):
+def show_tables(database=default_db, server=default_server):
 
     q = """
     SELECT
@@ -73,8 +78,17 @@ def show_tables(database='QuantDB', server='DC1Q2PSQLFE1V'):
     """
     return run_query(q=q, database=database, server=server)
 
+def show_temp(database=default_db, server=default_server):
+    q = """
+    SELECT
+        name
+    FROM tempdb.sys.objects
+    WHERE name LIKE '##%'
+    """
+    return run_query(q)
+
 # Search for columns in database and return tables they belong to
-def find_cols(search_terms, database='QuantDB', server='DC1Q2PSQLFE1V'):
+def find_cols(search_terms, database=default_db, server=default_server):
 
     q = f"""
     SELECT
@@ -92,7 +106,7 @@ def find_cols(search_terms, database='QuantDB', server='DC1Q2PSQLFE1V'):
     return run_query(q=q, database=database, server=server)
 
 # Search for tables in database
-def find_tables(search_terms, database='QuantDB', server='DC1Q2PSQLFE1V'):
+def find_tables(search_terms, database=default_db, server=default_server):
 
     q = f"""
     SELECT
@@ -122,7 +136,7 @@ def get_def(search_term, database="RDM", server='vdbedcisandbox'):
     return run_query(q=q, database=database, server=server)
 
 # Take a peak at the first couple of rows in a table
-def head(table_name, rows=5, database='QuantDB', server='DC1Q2PSQLFE1V'):
+def head(table_name, rows=5, database=default_db, server=default_server):
 
     rows = str(rows)
     q = f"""
@@ -134,7 +148,7 @@ def head(table_name, rows=5, database='QuantDB', server='DC1Q2PSQLFE1V'):
     return run_query(q=q, database=database, server=server)
 
 # Get list of columns from table
-def get_cols(table_name, database='QuantDB', server='DC1Q2PSQLFE1V'):
+def get_cols(table_name, database=default_db, server=default_server):
 
     q = f"""
     SELECT TOP 1
@@ -148,7 +162,7 @@ def get_cols(table_name, database='QuantDB', server='DC1Q2PSQLFE1V'):
 # loan_sample = TempTable("SELECT TOP 10 * INTO ##temp_table FROM loan;")
 # loan_sample.close() when done
 class TempTable:
-    def __init__(self, c, database='QuantDB', server='DC1Q2PSQLFE1V'):
+    def __init__(self, c, database=default_db, server=default_server):
         database = get_db_name(database)
         server = get_server_name(server)
 
@@ -181,3 +195,5 @@ def to_SQL_list(python_list, force_string=False):
     sql_list += ")"
 
     return sql_list
+
+run_command(f"ALTER USER [FRB\\pcosta] WITH DEFAULT_SCHEMA = {default_schema};")

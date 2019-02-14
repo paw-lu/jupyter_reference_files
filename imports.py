@@ -10,7 +10,7 @@ from IPython.core.interactiveshell import InteractiveShell
 %config InlineBackend.figure_format = "retina" # Higher resolution plots
 
 InteractiveShell.ast_node_interactivity = "all" # Muliple outputs
-plt.style.use('C:\\Users\\pcosta\\DSwork\\referece_files\\material.mplstyle') # My Matplotlib style
+plt.style.use('C:\\Users\\pcosta\\DSwork\\jupyter_reference_files\\material_theme_light.mplstyle') # My Matplotlib style
 
 # Plot references
 # plt.axhline(0, c='#9E9E9E', zorder=1) Origin line
