@@ -196,4 +196,11 @@ def to_SQL_list(python_list, force_string=False):
 
     return sql_list
 
-run_command(f"ALTER USER [FRB\\pcosta] WITH DEFAULT_SCHEMA = {default_schema};")
+# Change the default schema SQL looks for
+# Easy way to swich between prod and dev
+# run_command(f"ALTER USER [FRB\\pcosta] WITH DEFAULT_SCHEMA = {default_schema};")
+def change_schema(schema=default_schema)
+    username = run_query("SELECT CURRENT_USER;").iloc[0][0]
+    run_command(f"ALTER USER [{username}] WITH DEFAULT_SCHEMA = {schema};")
+
+change_schema(schema=default_schema)
