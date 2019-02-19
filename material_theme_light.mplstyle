@@ -55,14 +55,12 @@ lines.dash_joinstyle : round
 lines.solid_joinstyle : round
 lines.solid_capstyle: round
 
-axes.prop_cycle : cycler('color', ['1a73e8', 'ea4335', 'ffb600', '34a853', 'a142f4', '24c1e0', 'ff7e0f', 'f15b8d', '26459c', '258982'])
+axes.prop_cycle : cycler('color', ['1a73e8', 'ee675c', 'fcc934', '5bb974', 'af5cf7', '4ecde6', 'fa903e', 'ff63b8'])
                     # 1a73e8 : blue
-                    # ea4335 : red
-                    # ffb600 : yellow
-                    # 34a853 : green
-                    # a142f4 : purple
-                    # 24c1e0 : cyan
-                    # ff7e0f : orange
-                    # f15b8d : pink
-                    # 26459c : indigo
-                    # 258982 : teal
+                    # ee675c : red
+                    # fcc934 : yellow
+                    # 5bb974 : green
+                    # af5cf7 : purple
+                    # 4ecde6 : cyan
+                    # fa903e : orange
+                    # ff63b8 : pink
