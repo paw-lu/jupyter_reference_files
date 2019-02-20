@@ -1,4 +1,4 @@
-# Use with %load C:\Users\pcosta\DSwork\jupyter_reference_files\SQL.py
+# Use with %load C:\Users\pcosta\DSwork\jupyter_reference_files\imports.py
 %matplotlib inline
 
 import pandas as pd
@@ -17,3 +17,4 @@ plt.style.use('C:\\Users\\pcosta\\DSwork\\jupyter_reference_files\\material_them
 # plt.title('Lorep ipsum', loc='left') Title
 # plt.legend(bbox_to_anchor=(1,1), loc='upper left') Legend
 # plt.scatter(x, y, alpha=0.5, label='Lorep', s=100, linewidths=0, zorder=2) Scatter
+# plt.tick_params(bottom="on") Bottom ticks min, max = ax.get_ylim() or ax.set_ylim() can help
