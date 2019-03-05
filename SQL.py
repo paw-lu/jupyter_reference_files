@@ -54,7 +54,7 @@ def run_command(c, database=default_db, server=default_server):
         crsr.execute(c)
 
 # Run query through Pandas
-def run_query(q, database=default_db, server=default_server):
+def run_query(q, database=default_db, server=default_server, params=None):
     database = get_db_name(database)
     server = get_server_name(server)
 
@@ -64,7 +64,7 @@ def run_query(q, database=default_db, server=default_server):
                         f"Database={database};",
                         autocommit=True
                      ) as conn:
-        return pd.read_sql(q, conn)
+        return pd.read_sql(q, conn, params=params)
 
 # Show all tables in database
 def show_tables(database=default_db, server=default_server):
