@@ -13,7 +13,7 @@ savefig.edgecolor: FFFFFF
 axes.labelsize : 12
 axes.labelpad  : 25
 axes.labelweight : 400
-axes.labelcolor: 757575
+axes.labelcolor: 424242
 
 xtick.color : 757575
 ytick.color: 757575
@@ -33,7 +33,7 @@ axes.spines.right  : False
 axes.grid : True
 axes.grid.axis : y
 axes.axisbelow: True
-grid.color : CCCCCC
+grid.color : e0e0e0
 
 axes.titleweight : 400
 figure.titlesize: 17
