@@ -3,11 +3,17 @@ import pandas as pd
 import os
 import pyodbc
 import re
+import sys
 
 default_server = 'DC1Q2PSQLFE1V'
 default_db = 'QuantDB'
 default_schema = 'prod'
 
+# List of drivers
+system_drivers = {
+    'win32': '{SQL Server}',
+    'linux': '{ODBC Driver 13 for SQL Server}'
+}
 
 pyodbc.lowercase = True
 pd.set_option('max_columns', 180)
@@ -45,7 +51,7 @@ def run_command(c, database=default_db, server=default_server):
     server = get_server_name(server)
 
     with pyodbc.connect(
-                        "Driver={SQL Server};"
+                        f"Driver={system_drivers[sys.platform]};"
                         f"Server={server};"
                         f"Database={database};",
                         autocommit=True
@@ -59,7 +65,7 @@ def run_query(q, database=default_db, server=default_server, params=None):
     server = get_server_name(server)
 
     with pyodbc.connect(
-                        "Driver={SQL Server};"
+                        f"Driver={system_drivers[sys.platform]};"
                         f"Server={server};"
                         f"Database={database};",
                         autocommit=True
@@ -169,7 +175,7 @@ class TempTable:
         temp_table_name = re.findall(r"INTO\s##\w+", c)[0].split(' ')[1]
         run_command(f"IF OBJECT_ID('tempdb..{temp_table_name}','U') IS NOT NULL DROP TABLE {temp_table_name};")
         self.conn = pyodbc.connect(
-                                    "Driver={SQL Server};"
+                                    f"Driver={system_drivers[sys.platform]};"
                                     f"Server={server};"
                                     f"Database={database};",
                                     autocommit=True
