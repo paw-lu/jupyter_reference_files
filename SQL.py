@@ -7,7 +7,7 @@ import sys
 
 default_server = 'DC1Q2PSQLFE1V'
 default_db = 'QuantDB'
-default_schema = 'prod'
+default_schema = 'dev'
 
 # List of drivers
 system_drivers = {
@@ -79,7 +79,7 @@ def show_tables(database=default_db, server=default_server):
     SELECT
         name
     FROM SYSOBJECTS
-    WHERE xtype = 'U'
+    WHERE xtype IN ('U', 'V')
     ORDER BY 1;
     """
     return run_query(q=q, database=database, server=server)
@@ -95,13 +95,20 @@ def show_temp(database=default_db, server=default_server):
 
 # Search for columns in database and return tables they belong to
 def find_cols(search_terms, database=default_db, server=default_server):
+    if isinstance(search_terms, str):
+        search_terms = [search_terms]
 
     q = f"""
     SELECT
         c.name column_name,
-        t.name table_name
+        CASE
+            WHEN t.name IS NOT NULL THEN t.name
+            ELSE v.name
+            END
+            AS table_name
     FROM sys.columns c
-    INNER JOIN sys.tables t ON c.object_id = t.object_id
+    LEFT JOIN sys.tables t ON c.object_id = t.object_id
+    LEFT JOIN sys.views v ON v.object_id = c.object_id
     WHERE c.name LIKE '%{search_terms[0]}%'
     """
 
@@ -113,17 +120,29 @@ def find_cols(search_terms, database=default_db, server=default_server):
 
 # Search for tables in database
 def find_tables(search_terms, database=default_db, server=default_server):
+    if isinstance(search_terms, str):
+        search_terms = [search_terms]
+    
+    additional_search = ""
+    for term in search_terms[1:]:
+        additional_search += f" AND c.name LIKE '%{term}%'"
+    
 
     q = f"""
     SELECT
         name table_name
     FROM sys.tables
     WHERE name LIKE '%{search_terms[0]}%'
+    {additional_search}
+    
+    UNION ALL
+    
+    SELECT
+        name table_name
+    FROM sys.views
+    WHERE name LIKE '%{search_terms[0]}%'
+    {additional_search}
     """
-
-    for term in search_terms[1:]:
-        q += f" AND c.name LIKE '%{term}%'"
-    q += ";"
 
     return run_query(q=q, database=database, server=server)
 
@@ -135,7 +154,7 @@ def get_def(search_term, database="RDM", server='vdbedcisandbox'):
         RDM_COLUMN_NAME column_name,
         RDM_TABLE_NAME table_name,
         RDM_BUSINESS_DEFINITION definition
-    FROM Data_Dictionary
+    FROM V_Data_Dictionary
     WHERE RDM_COLUMN_NAME LIKE '%{search_term}%';
     """
 
