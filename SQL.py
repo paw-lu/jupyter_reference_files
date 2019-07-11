@@ -1,4 +1,3 @@
-# %load C:\Users\pcosta\DSwork\jupyter_reference_files\SQL.py
 # Load with %load C:\Users\pcosta\DSwork\jupyter_reference_files\SQL.py
 import pandas as pd
 import os
@@ -6,7 +5,7 @@ import pyodbc
 import re
 import sys
 
-default_server = "DC1Q2PSQLFE1V"
+default_server = "DC1Q2PSQLFE1V.corp.firstrepublic.com"
 default_db = "QuantDB"
 default_schema = "dev"
 
@@ -49,7 +48,8 @@ def run_command(c, database=default_db, server=default_server):
     with pyodbc.connect(
         f"Driver={system_drivers[sys.platform]};"
         f"Server={server};"
-        f"Database={database};",
+        f"Database={database};"
+        "Trusted_Connection=yes;",
         autocommit=True,
     ) as conn:
         crsr = conn.cursor()
@@ -64,7 +64,8 @@ def run_query(q, database=default_db, server=default_server, params=None):
     with pyodbc.connect(
         f"Driver={system_drivers[sys.platform]};"
         f"Server={server};"
-        f"Database={database};",
+        f"Database={database};"
+        "Trusted_Connection=yes;",
         autocommit=True,
     ) as conn:
         return pd.read_sql(q, conn, params=params)
@@ -202,7 +203,8 @@ class TempTable:
         self.conn = pyodbc.connect(
             f"Driver={system_drivers[sys.platform]};"
             f"Server={server};"
-            f"Database={database};",
+            f"Database={database};"
+            "Trusted_Connection=yes;",
             autocommit=True,
         )
         crsr = self.conn.cursor()

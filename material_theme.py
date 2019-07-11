@@ -1,5 +1,4 @@
 import plotly.graph_objs as go
-import plotly.io as pio
 
 # Use with
 # import plotly.io as pio
@@ -121,6 +120,7 @@ material_theme = go.layout.Template(
                     "marker": {
                         "colorbar": {"outlinewidth": 0, "ticks": ""},
                         "opacity": 0.5,
+                        "size": 15,
                     },
                     "type": "scatter",
                 }
