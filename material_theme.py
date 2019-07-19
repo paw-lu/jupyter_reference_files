@@ -252,6 +252,7 @@ material_theme = go.layout.Template(
                 "showline": True,
                 "ticks": "outside",
                 "nticks": 8,
+                "zeroline": False,
             },
             "yaxis": {
                 "automargin": True,
@@ -265,6 +266,8 @@ material_theme = go.layout.Template(
                 "tickwidth": 2.8,
                 "linewidth": 2.8,
                 "nticks": 8,
+                "showline": False,
+                "zeroline": True,
             },
         },
     }
